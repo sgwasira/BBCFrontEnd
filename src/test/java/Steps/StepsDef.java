@@ -1,6 +1,7 @@
 package Steps;
 
 import Pages.FormulaOnePage;
+import Pages.FormulaOneResultsPage;
 import Pages.HomePage;
 import Utils.BrowserFactory;
 import io.cucumber.java.en.*;
@@ -13,6 +14,7 @@ public class StepsDef {
     BrowserFactory browserFactory = new BrowserFactory();
     HomePage homePage;
     FormulaOnePage formulaOnePage;
+    FormulaOneResultsPage formulaOneResultsPage;
 
     @Given("I am use on the homepage of BBC Sport")
     public void i_am_use_on_the_homepage_of_bbc_sport() {
@@ -32,11 +34,15 @@ public class StepsDef {
 
         formulaOnePage = new FormulaOnePage(driver);
         formulaOnePage.verifyPageHeading();
+        formulaOnePage.clickResults();
 
     }
 
-    @And("I click on the {int} tab")
-    public void i_click_on_the_tab(Integer int1) {
+    @And("I click on the two thousand twenty-three tab")
+    public void i_click_on_the_two_thousand_twenty_three_tab() {
+        formulaOneResultsPage = new FormulaOneResultsPage(driver);
+        formulaOneResultsPage.verifyFormulaOneResultsPage();
+        formulaOneResultsPage.clickYearResults();
 
     }
 

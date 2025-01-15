@@ -5,7 +5,7 @@ Feature:  F1 Results 2023
     Given I am use on the homepage of BBC Sport
     And I on the Formula One link on the nav
     And I click on the results link
-    And I click on the 2023 tab
+    And I click on the two thousand twenty-three tab
     When I select theLas Vegas Grand Prix drop dropdown
     Then I must see the displayed results of that Grand Prix
 

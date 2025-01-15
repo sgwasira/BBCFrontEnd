@@ -20,16 +20,20 @@ public class FormulaOnePage {
     @FindBy(xpath = "//h1[contains(@id,'main-heading')]")
     WebElement formulaOnePAgeHeading_xpath;
 
-    public FormulaOnePage(WebDriver driver){
+    public FormulaOnePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void verifyPageHeading(){
+    public void verifyPageHeading() {
         new WebDriverWait(driver, Duration.ofSeconds(4)).until(ExpectedConditions.visibilityOf(formulaOnePAgeHeading_xpath));
         String pageHeading = formulaOnePAgeHeading_xpath.getText();
 
-        Assert.assertEquals(pageHeading,"Formula 1");
-
+        Assert.assertEquals(pageHeading, "Formula 1");
     }
+
+    public void clickResults(){
+        results_xpath.click();
+    }
+
 }
