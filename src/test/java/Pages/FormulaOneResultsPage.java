@@ -60,7 +60,7 @@ public class FormulaOneResultsPage {
     }
 
     public void verifySecondPlace(){
-        Assert.assertEquals(verifySecondPlace_xpath.getText(),"Charles Leclerc");
+        Assert.assertEquals(verifySecondPlace_xpath.getText()," George Russell ");
     }
 
     public void verifyThirdPlace(){
