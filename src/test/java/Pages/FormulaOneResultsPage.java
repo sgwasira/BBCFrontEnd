@@ -23,6 +23,17 @@ public class FormulaOneResultsPage {
     @FindBy(xpath = "//span[@data-js-text='true'][contains(.,'Las Vegas Grand Prix, Las Vegas Street Circuit')]")
     WebElement lasVegasStreetCircuit_xpath;
 
+    @FindBy(xpath = "(//span[@class='ssrcss-1hf3wfc-FullName e1dzfgvv0'][contains(.,'Max Verstappen')])[1]")
+    WebElement verifyFirstPlace_xpath;
+
+
+    @FindBy(xpath = "(//span[@class='ssrcss-1hf3wfc-FullName e1dzfgvv0'][contains(.,'Charles Leclerc')])[1]")
+    WebElement verifySecondPlace_xpath;
+
+
+    @FindBy(xpath = "(//span[@class='ssrcss-1hf3wfc-FullName e1dzfgvv0'][contains(.,'Sergio Perez')])[1]")
+    WebElement verifyThirdPlace_xpath;
+
     public FormulaOneResultsPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -39,7 +50,20 @@ public class FormulaOneResultsPage {
         yearResults_xpath.click();
     }
 
-    public  void clickLesVegasLink(){
+    public void clickLesVegasLink() {
         lasVegasStreetCircuit_xpath.click();
+    }
+
+
+    public void verifyFirstPlace(){
+        Assert.assertEquals(verifyFirstPlace_xpath.getText(),"Max Verstappen");
+    }
+
+    public void verifySecondPlace(){
+        Assert.assertEquals(verifySecondPlace_xpath.getText(),"Charles Leclerc");
+    }
+
+    public void verifyThirdPlace(){
+        Assert.assertEquals(verifyThirdPlace_xpath.getText(),"Sergio Perez");
     }
 }

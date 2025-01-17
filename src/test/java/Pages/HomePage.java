@@ -20,6 +20,9 @@ public class HomePage {
     @FindBy(xpath = "//span[@class='ssrcss-1u47p8g-LinkTextContainer eis6szr1'][contains(.,'Formula 1')]")
     WebElement formulaLink_xpath;
 
+    @FindBy(xpath = "//a[@href='https://www.bbc.co.uk/search?d=SPORT_GNL'][contains(.,'Search BBC')]")
+    WebElement searchBar_xpath;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -34,6 +37,14 @@ public class HomePage {
 
     public void clickFormulaLink() {
         formulaLink_xpath.click();
+    }
+
+    public void enterSearchString(String searchText){
+        searchBar_xpath.sendKeys(searchText);
+    }
+
+    public void clickSearchBar(){
+        searchBar_xpath.click();
     }
 
 }

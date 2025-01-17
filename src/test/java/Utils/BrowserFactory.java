@@ -33,8 +33,8 @@ public class BrowserFactory {
         return  driver;
     }
 
-    //@AfterTest
-    public void tearDown(){
+    @AfterTest
+    public static void tearDown(){
         driver.quit();
     }
 }
